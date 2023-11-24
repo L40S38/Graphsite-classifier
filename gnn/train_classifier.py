@@ -19,6 +19,10 @@ import copy
 import matplotlib
 import matplotlib.pyplot as plt
 
+# ignore Future Warning
+import warnings
+warnings.simplefilter('ignore', FutureWarning)
+
 
 def get_args():
     parser = argparse.ArgumentParser('python')
@@ -34,6 +38,16 @@ def get_args():
                         default=23,
                         type=int,
                         help='random seed for splitting dataset.')
+    
+    parser.add_argument('-config',
+                        required=False,
+                        default='./train_classifier.yaml',
+                        help='config file such as train_classifier.yaml')
+    
+    parser.add_argument('-gpu',
+                        required=False,
+                        default=0,
+                        help='which gpu to use')
 
     return parser.parse_args()
 
@@ -205,16 +219,31 @@ def plot_cm(cm, figure_path):
     ax.set(xlabel='Predicted label', ylabel='True label')
     plt.savefig(figure_path, bbox_inches='tight')
 
+def divide_clusters_train_test_from_yaml(clusters,data_dir,val_fold=0):
+    # test folds
+    # load the validation dict
+    with open(data_dir + 'pockets_fold{}.yaml'.format(val_fold), 'r') as f:
+        val_dict = yaml.full_load(f)
+
+    # put the data in train folds together
+    train_clusters = [list(filter(lambda x: x not in val_dict.keys(), cluster)) for cluster in clusters]
+    test_clusters = [list(filter(lambda x: x in val_dict.keys(), cluster)) for cluster in clusters]
+    print(f"num each in train_clusters:{[len(cluster) for cluster in train_clusters]}")
+    print(f"num each in test_clusters:{[len(cluster) for cluster in test_clusters]}")
+
+    return train_clusters, test_clusters
 
 if __name__ == "__main__":
-    with open('./train_classifier.yaml') as f:
-        config = yaml.load(f, Loader=yaml.FullLoader)
 
     args = get_args()
     seed = int(args.seed)
     random.seed(seed)
     print('seed: ', seed)
     run = int(args.run)
+    config_file = args.config
+
+    with open(config_file) as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
 
     cluster_file_dir = config['cluster_file_dir']
     pocket_dir = config['pocket_dir']
@@ -247,7 +276,7 @@ if __name__ == "__main__":
     print('number of workers to load data: ', num_workers)
 
     # detect cpu or gpu
-    device = torch.device('cuda' if torch.cuda.is_available()
+    device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available()
                           else 'cpu')
     print('device: ', device)
 
@@ -260,7 +289,8 @@ if __name__ == "__main__":
     print('number of classes after merging: ', num_classes)
 
     # divide the clusters into train, validation and test
-    train_clusters, test_clusters = divide_clusters_train_test(clusters)
+    #train_clusters, test_clusters = divide_clusters_train_test(clusters)
+    train_clusters, test_clusters = divide_clusters_train_test_from_yaml(clusters, data_dir='../../Pocket2Drug/data/folds/')
     num_train_pockets = sum([len(x) for x in train_clusters])
     num_test_pockets = sum([len(x) for x in test_clusters])
     print('number of pockets in training set: ', num_train_pockets)
@@ -312,14 +342,14 @@ if __name__ == "__main__":
     num_channels = config['num_channels']
 
     model = GraphsiteClassifier(
-        num_classes=num_classes, 
-        num_features=num_features,
-        dim=model_size, 
+        num_classes=num_classes, #len(clusters)
+        num_features=num_features, #11
+        dim=model_size, #128
         train_eps=True, 
         num_edge_attr=1,
-        which_model=which_model, 
-        num_layers=num_layers,
-        num_channels=num_channels, 
+        which_model=which_model, #jknwm
+        num_layers=num_layers, #6
+        num_channels=num_channels, #3
         deg=deg
     ).to(device)
     print('model architecture:')

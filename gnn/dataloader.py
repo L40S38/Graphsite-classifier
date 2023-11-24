@@ -73,7 +73,7 @@ def pocket_loader_gen(pocket_dir, pop_dir, clusters,
     return pocketloader, len(pocketset), pocketset
 
 
-class PocketDataset(Dataset):
+class PocketDataset(torch.utils.data.Dataset):  #(Dataset):
     """Dataset to generate single pocket graphs for inference/testing."""
 
     def __init__(self, pocket_dir, pop_dir, clusters, features_to_use):
@@ -132,9 +132,10 @@ class PocketDataset(Dataset):
         pocket = self.pockets[idx]
         label = self.class_labels[idx]
         pocket_dir = self.pocket_dir + pocket + '/' + pocket + '.mol2'
-        profile_dir = self.pocket_dir + pocket + \
+        profile_dir = self.pop_dir + pocket[0:-2] + \
             '/' + pocket[0:-2] + '.profile'
-        pop_dir = self.pop_dir + pocket[0:-2] + '.pops'
+        #pop_dir = self.pop_dir + pocket[0:-2] + '.pops'
+        pop_dir = self.pop_dir + pocket[0:-2] + '/' + pocket[0:-2] + '.pops'
 
         x, edge_index, edge_attr = read_pocket(
             pocket_dir, profile_dir,
@@ -217,16 +218,18 @@ class PairDataset(Dataset):
 
         # pocket a location
         pocket_a_dir = self.pocket_dir + pair[0] + '/' + pair[0] + '.mol2'
-        profile_a_dir = self.pocket_dir + \
-            pair[0] + '/' + pair[0][0:-2] + '.profile'
-        pop_a_dir = self.pop_dir + pair[0][0:-2] + '.pops'
+        profile_a_dir = self.pop_dir + \
+            pair[0][0:-2] + '/' + pair[0][0:-2] + '.profile'
+        #pop_a_dir = self.pop_dir + pair[0][0:-2] + '.pops'
+        pop_a_dir = self.pop_dir + pair[0][0:-2] + '/' + pair[0][0:-2] + '.pops'
 
         # pocket b location
         pocket_b_dir = self.pocket_dir + pair[1] + '/' + pair[1] + '.mol2'
-        profile_b_dir = self.pocket_dir + \
-            pair[1] + '/' + pair[1][0:-2] + '.profile'
-        pop_b_dir = self.pop_dir + pair[1][0:-2] + '.pops'
-
+        profile_b_dir = self.pop_dir + \
+            pair[1][0:-2] + '/' + pair[1][0:-2] + '.profile'
+        #pop_b_dir = self.pop_dir + pair[1][0:-2] + '.pops'
+        pop_b_dir = self.pop_dir + pair[1][0:-2] + '/' + pair[1][0:-2] + '.pops'
+        print(pop_a_dir,pop_b_dir)
         x_a, edge_index_a, edge_attr_a = read_pocket(
             pocket_a_dir, profile_a_dir,
             pop_a_dir, self.hydrophobicity,

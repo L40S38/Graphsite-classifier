@@ -6,9 +6,13 @@ import torch
 import yaml
 from torch_geometric.data import Data, Dataset
 from torch_geometric.data import DataLoader
-from dataloader import read_pocket
+from dataloader import read_pocket, read_cluster_file_from_yaml, merge_clusters
 from model import GraphsiteClassifier
 import sklearn.metrics as metrics
+
+# ignore Future Warning
+import warnings
+warnings.simplefilter('ignore', FutureWarning)
 
 
 def get_args():
@@ -29,6 +33,11 @@ def get_args():
                         default='../trained_models/trained_classifier_model_63.pt',
                         help='path to the file of trained model')
 
+    parser.add_argument('-config',
+                        required=False,
+                        default='./train_classifier.yaml',
+                        help='config file such as train_classifier.yaml')
+
     return parser.parse_args()
 
 
@@ -46,7 +55,7 @@ def pocket_loader_gen(pocket_dir, clusters, features_to_use,
     return pocketloader, len(pocketset), pocketset
 
 
-class PocketDataset(Dataset):
+class PocketDataset(torch.utils.data.Dataset):
     """Dataset to generate single pocket graphs for inference/testing."""
 
     def __init__(self, pocket_dir, clusters, features_to_use):
@@ -125,6 +134,11 @@ def find_second_prediction(prob):
 if __name__ == "__main__":
     args = get_args()
 
+    # model config
+    config_file = args.config
+    with open(config_file) as f:
+        config = yaml.load(f, Loader=yaml.FullLoader)
+
     # set of further filtered unseen data
     unseen_data_dir = args.unseen_data_dir
     pockets = []
@@ -132,18 +146,26 @@ if __name__ == "__main__":
         if f.endswith(".mol2"):
             pockets.append(f[0:7])
     pockets = set(pockets)
-
+    
     # classes of unseen data in yaml lists
     unseen_data_classes = args.unseen_data_classes
-    with open(unseen_data_classes) as f:
-        clusters = yaml.load(f, Loader=yaml.FullLoader)
 
-    filtered_clusters = []
-    for cluster in clusters:
-        filtered_clusters.append([])
-        for x in cluster:
-            if x in pockets:
-                filtered_clusters[-1].append(x)
+    #with open(unseen_data_classes) as f:
+    #    clusters = yaml.load(f, Loader=yaml.FullLoader)
+    clusters = read_cluster_file_from_yaml(unseen_data_classes)
+    merge_info = config['merge_info']
+    clusters = merge_clusters(clusters, merge_info)
+
+    #filtered_clusters = []
+    #for cluster in clusters:
+    #    filtered_clusters.append([])
+    #    for x in cluster:
+    #        if x in pockets:
+    #            filtered_clusters[-1].append(x)
+
+    # Since no clusters are provided for unseen_data, all clusters are once placed in class 0.
+    filtered_clusters = [[pocket for pocket in pockets]]
+    print(f"filtered_clusters:{filtered_clusters}")
 
     # dataloader for unseen data
     features_to_use = ['x', 'y', 'z', 'r', 'theta', 'phi', 'sasa',
@@ -158,8 +180,6 @@ if __name__ == "__main__":
                                             )
 
     # load model in cpu mode
-    with open('./train_classifier.yaml') as f:
-        config = yaml.load(f, Loader=yaml.FullLoader)
 
     # detect cpu or gpu
     device = torch.device('cuda' if torch.cuda.is_available()
@@ -172,17 +192,23 @@ if __name__ == "__main__":
     num_channels = config['num_channels']
     num_features = len(features_to_use)
     num_classes = len(clusters)
+    assert which_model in ['jk', 'residual', 'normal', 'pna', 'jknwm', 'jkgin']
 
     model = GraphsiteClassifier(
-        num_classes=num_classes, num_features=num_features,
-        dim=model_size, train_eps=True, num_edge_attr=1,
-        which_model=which_model, num_layers=num_layers,
-        num_channels=num_channels, deg=None
+        num_classes=num_classes, 
+        num_features=num_features,
+        dim=model_size, 
+        train_eps=True, 
+        num_edge_attr=1,
+        which_model=which_model, 
+        num_layers=num_layers,
+        num_channels=num_channels, 
+        deg=None
     ).to(device)
 
-    model.load_state_dict(torch.load(args.trained_model,
-                                     map_location=torch.device('cpu')))
-
+    #model.load_state_dict(torch.load(args.trained_model,
+    #                                 map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(args.trained_model))
     model.eval()
 
     print('pocket', 'label', 'predict', 'probability',
@@ -193,6 +219,7 @@ if __name__ == "__main__":
     predictions = []
     probabilities = []
     for data, pocket_name in pocket_loader:
+        data = data.to(device)
         output = model(data.x, data.edge_index, data.edge_attr, data.batch)
         pred = output.max(dim=1)[1]
 
@@ -212,9 +239,9 @@ if __name__ == "__main__":
               confidence, second_pred[1], second_pred[0])
 
     # classification report
-    report = metrics.classification_report(targets, predictions, digits=4)
-    print('---------------classification report----------------')
-    print(report)
+    #report = metrics.classification_report(targets, predictions, digits=4)
+    #print('---------------classification report----------------')
+    #print(report)
 
     """
                 precision    recall  f1-score   support

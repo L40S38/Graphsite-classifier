@@ -189,7 +189,7 @@ def bond_parser(pocket_path):
     df_bonds = df_bonds.replace('\n', ' ')
 
     # convert the the elements to integer
-    df_bonds = np.array([np.float(x) for x in df_bonds.split()]).reshape(
+    df_bonds = np.array([float(x) for x in df_bonds.split()]).reshape(
         (-1, 4))
 
     df_bonds = pd.DataFrame(

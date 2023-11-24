@@ -4,17 +4,17 @@
  pocket_dir: "/home/shiozawa.l/osf_data/pocket-data/"
  pop_dir: "/home/shiozawa.l/osf_data/protein-data/"
  profile_dir: "/home/shiozawa.l/osf_data/protein-data/"
- trained_model_dir: "../trained_models/"
- loss_dir: "./results/"
- confusion_matrix_dir: "./results/"
+ trained_model_dir: "../trained_models_rm_position/"
+ loss_dir: "./results_rm_position/"
+ confusion_matrix_dir: "./results_rm_position/"
 
  # dataset configuration
  merge_info: [[0, 9, 12, 25], 2, [3, 8, 13, 27], 4, 6, [7, 19, 21], [10, 16, 28], 15, 17, 18, [20, 23], 24, 26, 29]
- features_to_use: ['x', 'y', 'z', 'r', 'theta', 'phi', 'sasa', 'charge', 'hydrophobicity', 'binding_probability', 'sequence_entropy']   
+ features_to_use: ['sasa', 'charge', 'hydrophobicity', 'binding_probability', 'sequence_entropy']   
 
  # model configuration 
  which_model: 'jknwm' # 'jk', 'residual', 'pna', 'jknwm', 'jkgin' or 'normal'
- model_size: 128 # size of the neural network
+ model_size: 96 # size of the neural network
  num_layers: 6
  num_channels: 3 # number of neural message masking channels form jknmm
 

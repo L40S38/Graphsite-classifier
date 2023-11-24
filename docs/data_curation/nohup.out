@@ -1,0 +1,502 @@
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1 protein sequences to process...
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1 protein sequences to process...
+Traceback (most recent call last):
+  File "pdb_to_mol2.py", line 42, in <module>
+    transform(data_dir,l)
+  File "pdb_to_mol2.py", line 31, in transform
+    subp.wait(timeout=60)
+  File "/home/shiozawa.l/anaconda3/envs/data_curation/lib/python3.8/subprocess.py", line 1083, in wait
+    return self._wait(timeout=timeout)
+  File "/home/shiozawa.l/anaconda3/envs/data_curation/lib/python3.8/subprocess.py", line 1814, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command 'obabel -ipdb /home/shiozawa.l/add_val_data/POCKETS_TRANSFORMED/pocket9_atm_rot.pdb -omol2 --gen3D -O /home/shiozawa.l/add_val_data/POCKETS_TRANSFORMED_MOL2/pocket9_atm_rot.mol2' timed out after 60 seconds
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 1).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 2).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 3).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 4).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 5).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 6).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 7).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 8).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 9).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 10).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 11).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 12).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 13).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 14).
+==============================
+*** Open Babel Warning  in parseAtomRecord
+  WARNING: Problems reading a PDB file
+  Problems reading a HETATM or ATOM record.
+  According to the PDB specification,
+  columns 79-80 should contain charge of the atom
+  but OpenBabel found ' 0' (atom 15).
+1 molecule converted
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+0.48user 0.07system 1:20:00elapsed 0%CPU (0avgtext+0avgdata 58936maxresident)k
+0inputs+128outputs (0major+20320minor)pagefaults 0swaps
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[thread_0] 1 protein sequences to process...
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
+[thread_0] 1 protein sequences to process...
+[thread_0] 1/1 entries processed (100.00%)
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 0 threads have completed
+[generate_profiles.pl] 1 threads have completed
+[generate_profiles.pl] writing profiles in output...
+
